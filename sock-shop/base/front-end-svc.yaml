@@ -10,6 +10,11 @@ spec:
   ports:
   - port: 80
     targetPort: 8079
-    nodePort: 30001
+    nodePort: 31010
+  externalTrafficPolicy: Cluster
+  ipFamilies:
+    - IPv4
+  ipFamilyPolicy: SingleStack
+  internalTrafficPolicy: Cluster
   selector:
     name: front-end
